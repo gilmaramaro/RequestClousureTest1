@@ -30,6 +30,9 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func myButton(_ sender: Any) {
+        if let myScreen2 = self.storyboard?.instantiateViewController(withIdentifier: "ScreenThree") as? ThirdViewController {
+            myScreen2.connection3 = self.connectionScreen
+            self.navigationController?.pushViewController(myScreen2, animated: true)
+        }
     }
-    
 }
