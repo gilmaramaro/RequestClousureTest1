@@ -76,7 +76,7 @@
                                 <rect key="frame" x="94" y="692" width="196" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Avancar"/>
                                 <connections>
                                     <action selector="myButton:" destination="bBW-ox-Ssk" eventType="touchUpInside" id="idW-6O-JUk"/>
                                 </connections>
@@ -126,6 +126,11 @@
                         <viewLayoutGuide key="safeArea" id="QSi-lc-srv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="myImage" destination="Cc5-kz-mWx" id="sJ6-GJ-cjN"/>
+                        <outlet property="myLabel1" destination="rrP-du-l1F" id="wHV-PR-CfP"/>
+                        <outlet property="myLabel2" destination="feq-cb-VnU" id="OVW-sy-ppY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1sD-cr-rg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
