@@ -8,22 +8,28 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    @IBOutlet weak var myImage: UIImageView!
+    @IBOutlet weak var myLabel1: UILabel!
+    @IBOutlet weak var myLabel2: UILabel!
+    @IBOutlet weak var myLabel3: UILabel!
+    
+    var connectionScreen: PizzaElement?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        myScreenTwo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func myScreenTwo() {
+        let urlImage = URL(string: connectionScreen?.imageURL ?? "")
+        myImage.sd_setImage(with: urlImage)
+        myLabel1.text = "Pizza Pequena: R$\(connectionScreen?.priceP ?? 0.0)"
+        myLabel2.text = "Pizza Media: R$\(connectionScreen?.priceM ?? 0.0)"
+        myLabel3.text = "Pizza Grande: R$\(connectionScreen?.priceG ?? 0.0)"
     }
-    */
-
+    
+    @IBAction func myButton(_ sender: Any) {
+    }
+    
 }

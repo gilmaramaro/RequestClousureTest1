@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     func setupTableView() {
         self.myTableView.dataSource = self
-    //    self.myTableView.delegate = self
+        self.myTableView.delegate = self
         let UINIB = UINib(nibName: "MyTableViewCell", bundle: nil)
         myTableView.register(UINIB, forCellReuseIdentifier: "Cell")
     }
@@ -51,3 +51,11 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let myScreen = self.storyboard?.instantiateViewController(withIdentifier: "ScreenTwo") as? SecondViewController {
+            myScreen.connectionScreen = self.request.arrayPizza?[indexPath.row]
+            self.navigationController?.pushViewController(myScreen, animated: true)
+        }
+    }
+}
